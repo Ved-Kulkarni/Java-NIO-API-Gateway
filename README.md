@@ -86,6 +86,7 @@ wrk -t2 -c50 -d2s http://localhost:9091/api
 ----
 
 ## 🧠 Architecture
+```
 Client
   ↓
 NIO Server (Selector)
@@ -97,9 +98,9 @@ Router
 Rate Limiter
   ↓
 Response
+```
 
 ----
-
 ## ⚡ Performance
 
 Tested using:
@@ -122,19 +123,21 @@ curl localhost:9091/api
 ----
 
 ## 📂 Project Structure
+```
 com.ved
-├── http       → Request/Response models
-├── nio        → NIO server + rate limiting
-├── router     → Routing logic
-├── server     → Blocking server (for comparison)
-└── App.java   → Entry point
+  ├── http       → Request/Response models
+  ├── nio        → NIO server + rate limiting
+  ├── router     → Routing logic
+  ├── server     → Blocking server (for comparison)
+  └── App.java   → Entry point
+```
 
 ---
 
 ## 📈 Key Learnings
 
-Difference between blocking vs non-blocking I/O
-Event-driven architecture using Selector
-Rate limiting (fixed window)
-Performance optimization using ByteBuffer reuse
+Difference between blocking vs non-blocking I/O\
+Event-driven architecture using Selector\
+Rate limiting (fixed window)\
+Performance optimization using ByteBuffer reuse\
 Docker-based deployment
